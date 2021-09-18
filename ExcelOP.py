@@ -60,8 +60,6 @@ class ExcelOP(object):
 
     def gethavegetmoneyprojectdata(self):
         for i in range(3, 833):
-            # place = self.nolinengsheet["C" + str(i)].value
-            # if (place == "重庆"):
             num = self.havegetmoneysheet["B" + str(i)].value
             if num==None: num=""
             num =self.formatnum(num)
@@ -70,6 +68,7 @@ class ExcelOP(object):
             if getmoney!=None:
                 if float(getmoney) >0:
                     self.havegetmoneyprojectdata.append([num, name, getmoney])
+
     def formatnum(self,num):
         temp_num = num.replace("－", "-")
         temp_num = temp_num.replace(" -", "-")
